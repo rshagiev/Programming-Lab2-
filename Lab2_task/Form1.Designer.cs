@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -41,6 +42,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,14 +50,17 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Fibonachi = new System.Windows.Forms.ToolStripMenuItem();
             this.fiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.evilFibonachiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rebootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shutdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.evilFibonachiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -76,9 +81,13 @@
             this.toolStripButton5,
             this.toolStripSeparator2,
             this.toolStripButton8,
-            this.toolStripTextBox1});
+            this.toolStripTextBox1,
+            this.toolStripSeparator3,
+            this.toolStripLabel2,
+            this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.Size = new System.Drawing.Size(739, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
@@ -179,6 +188,13 @@
             this.toolStripTextBox1.Text = "OFF";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click_1);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(16, 36);
+            this.toolStripLabel1.Text = "...";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -236,9 +252,16 @@
             // fiToolStripMenuItem
             // 
             this.fiToolStripMenuItem.Name = "fiToolStripMenuItem";
-            this.fiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fiToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.fiToolStripMenuItem.Text = "Have fun!";
             this.fiToolStripMenuItem.Click += new System.EventHandler(this.fiToolStripMenuItem_Click);
+            // 
+            // evilFibonachiToolStripMenuItem
+            // 
+            this.evilFibonachiToolStripMenuItem.Name = "evilFibonachiToolStripMenuItem";
+            this.evilFibonachiToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.evilFibonachiToolStripMenuItem.Text = "Evil Fibonachi";
+            this.evilFibonachiToolStripMenuItem.Click += new System.EventHandler(this.evilFibonachiToolStripMenuItem_Click);
             // 
             // cToolStripMenuItem
             // 
@@ -270,13 +293,6 @@
             this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.shutdownToolStripMenuItem.Text = "Shutdown";
             this.shutdownToolStripMenuItem.Click += new System.EventHandler(this.shutdownToolStripMenuItem_Click);
-            // 
-            // evilFibonachiToolStripMenuItem
-            // 
-            this.evilFibonachiToolStripMenuItem.Name = "evilFibonachiToolStripMenuItem";
-            this.evilFibonachiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.evilFibonachiToolStripMenuItem.Text = "Evil Fibonachi";
-            this.evilFibonachiToolStripMenuItem.Click += new System.EventHandler(this.evilFibonachiToolStripMenuItem_Click);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -312,6 +328,24 @@
             this.panel1.Size = new System.Drawing.Size(739, 391);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 36);
+            this.toolStripLabel2.Text = "Time:";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // Form1
             // 
@@ -365,6 +399,10 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

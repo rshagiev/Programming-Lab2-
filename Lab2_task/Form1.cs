@@ -238,6 +238,29 @@ namespace Lab2_task
         }
 
     }
+        
+            private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripLabel1.Text = DateTime.Now.TimeOfDay.ToString();
+        }
+
+
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            // toolStripLabel1.Text = DateTime.Now.TimeOfDay.ToString();
+            toolStripLabel1.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
         {
