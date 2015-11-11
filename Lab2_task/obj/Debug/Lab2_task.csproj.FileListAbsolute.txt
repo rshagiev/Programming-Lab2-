@@ -1,0 +1,14 @@
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\bin\Debug\Lab2_task.exe.config
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\bin\Debug\Lab2_task.exe
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\bin\Debug\Lab2_task.pdb
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.Form1.resources
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.Properties.Resources.resources
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.csproj.GenerateResource.Cache
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.exe
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.pdb
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.csprojResolveAssemblyReference.cache
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Interop.WMPLib.dll
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\AxInterop.WMPLib.dll
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\obj\Debug\Lab2_task.csproj.ResolveComReference.cache
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\bin\Debug\Interop.WMPLib.dll
+\\mac\home\documents\visual studio 2015\Projects\Lab2_task\Lab2_task\bin\Debug\AxInterop.WMPLib.dll
