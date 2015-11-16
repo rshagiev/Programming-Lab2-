@@ -12,6 +12,7 @@ namespace Lab_2
     {
         protected Color c;
         protected int w, h, x, y;
+        protected bool select;
 
         protected Brush brush;
         protected Random r = new Random();
@@ -20,13 +21,13 @@ namespace Lab_2
 
         public Point Location { get { return new Point(x, y); } set { x = value.X; y = value.Y; } }
 
-        public bool Selected { get; set; }
+        public bool Selected { get { return select; } set { select = value; }  }
 
-        abstract public void ifcontainsPoint(Point p);
+        abstract public bool ifcontainsPoint(Point p);
 
         public GraphElement(int x0, int y0)
         {
-            Color[] cols = { Color.Red, Color.Green, Color.Yellow, Color.Cyan, Color.Azure, Color.WhiteSmoke };
+            Color[] cols = { Color.Black/*, Color.Green, Color.Yellow, Color.Cyan, Color.Azure, Color.WhiteSmoke */};
             c = cols[r.Next(cols.Length)];
             x = x0;
             y = y0;

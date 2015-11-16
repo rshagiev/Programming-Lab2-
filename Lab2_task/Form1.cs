@@ -94,9 +94,7 @@ namespace Lab2_task
 
             for (int n = 1; n < 605; n++)
             {
-                //BigInteger bigInt = new BigInteger(Math.Pow(1 + Math.Sqrt(5), n) - Math.Pow(1 - Math.Sqrt(5), n)) / (Math.Pow(2, n) * Math.Sqrt(5));
-                //double fi = (Math.Pow(1 + Math.Sqrt(5), n) - Math.Pow(1 - Math.Sqrt(5), n)) / (Math.Pow(2, n) * Math.Sqrt(5));
-                // Console.Write(fi + " , ");
+             
                 BigInteger bigIntChisl = new BigInteger(Math.Pow(1 + Math.Sqrt(5), n) - Math.Pow(1 - Math.Sqrt(5), n));
                 BigInteger bigIntZnam = new BigInteger(Math.Pow(2, n) * Math.Sqrt(5));
                 Console.Write(BigInteger.Divide(bigIntChisl, bigIntZnam) + " , ");
@@ -122,6 +120,7 @@ namespace Lab2_task
         {
             if (dragging) dragging = false;
             else return;
+            panel2.Invalidate();
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
@@ -136,7 +135,6 @@ namespace Lab2_task
         {
             foreach (GraphElement el in elements.Reverse<GraphElement>())
             {
-                el.ifcontainsPoint(e.Location);
                 if (el.Selected) { dragging = true; dx = e.Location.X - el.Location.X; dy = e.Location.Y - el.Location.Y; return; }
             }
         }
@@ -150,12 +148,26 @@ namespace Lab2_task
 
         private void panel2_MouseClick(object sender, MouseEventArgs e)
         {
+            bool q = false;
             foreach (GraphElement elem in elements.Reverse<GraphElement>())
             {
-                elem.ifcontainsPoint(e.Location);
-                if (elem.Selected) return;
+                if (elem.ifcontainsPoint(e.Location))
+                {
+                    elem.Selected = true;
+                    q = true;
+                }
+               // if (elem.Selected) return;
             }
-            panel2.Refresh();
+            if (q==false)
+                foreach (GraphElement elem in elements.Reverse<GraphElement>())
+                {
+
+                    elem.Selected = false;
+                    
+                 }
+
+
+                    panel2.Refresh();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -165,6 +177,7 @@ namespace Lab2_task
             {
                 if (!elem.Selected) { elements1.Add(elem); }
             }
+            
             elements = elements1;
             panel2.Refresh();
         }
@@ -177,38 +190,28 @@ namespace Lab2_task
             }
             panel2.Refresh();
         }
-
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton8_Click(object sender, EventArgs e)
+    
+        private void toolStripButton8_Click_1(object sender, EventArgs e)
         {
             eli++;
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
             if (eli % 2 == 0)
-            {
-                toolStripTextBox1.Text = "OFF";
-                toolStripTextBox1.BackColor = Color.White;
-            }
-            else
             {
                 toolStripTextBox1.Text = "ON";
                 toolStripTextBox1.BackColor = Color.ForestGreen;
+            }
+            else
+            {
+                toolStripTextBox1.Text = "OFF";
+                toolStripTextBox1.BackColor = Color.White;
             }
 
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (eli % 2 == 0) elements.Add(new Ellipse(rand.Next(panel1.Width), rand.Next(panel1.Height)));
-            else elements.Add(new Lab_2.Rectangle(rand.Next(panel1.Width), rand.Next(panel1.Height)));
-            panel1.Refresh();
+            if (eli % 2 == 0) elements.Add(new Ellipse(rand.Next(panel2.Width), rand.Next(panel2.Height)));
+            else elements.Add(new Lab_2.Rectangle(rand.Next(panel2.Width), rand.Next(panel2.Height)));
+            panel2.Refresh();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
@@ -262,9 +265,17 @@ namespace Lab2_task
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("shutdown.exe", "-s -t 0");
         }
+
+
     }
 }
